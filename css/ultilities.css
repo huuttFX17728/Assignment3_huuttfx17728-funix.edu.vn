@@ -1,0 +1,89 @@
+/* Ultilities */
+.container-fluid { 
+    width: 100%;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1000px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    /* border: #333 1px solid; */
+}
+
+
+.fixed-top { 
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.flex { 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.flex-wrap { 
+    flex-wrap: wrap;
+}
+
+.align-top { 
+    align-items: flex-start;
+}
+
+.hover-all { 
+    z-index: 999;
+}
+
+.text-center { 
+    text-align: center;
+}
+
+.text-white { 
+    color: #fff;
+}
+
+.sub-title { 
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.bg-white { 
+    background-color: #fff;
+}
+
+.bg-light { 
+    background-color: var(--light-color);
+}
+
+/* grid */
+.grid { 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.grid-3 { 
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 { 
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.m-auto { 
+    margin: 0 auto;
+}
+
+.absolute-middle { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
