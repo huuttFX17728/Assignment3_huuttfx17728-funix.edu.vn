@@ -5,7 +5,7 @@
     10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
 */
 
-
+/* Set color variables */
 :root { 
     --primary-color: #199cdb;
     --primary-hover: #1864ab;
@@ -135,7 +135,7 @@ section {
 }
 
 .nav-menu { 
-    height: 100%;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -149,6 +149,8 @@ section {
     width: 100%;
     height: 100%;
     text-align: center;
+
+    
 }
 
 .nav-menu a { 
@@ -162,13 +164,20 @@ section {
 }
 
 .nav-info { 
-    flex-direction: column;
-    padding: 10px 10px;
+    
+    padding: 0 10px;
+}
+
+.nav-info h3 { 
+    margin: 0;
+    margin-top: 15px;
+    line-height: 1.2;
 }
 
 .nav-info p { 
     font-size: 12px;
     letter-spacing: 0.5px;
+    display: block;
 }
 
 .avatar { 
@@ -189,6 +198,11 @@ section {
     right: 0px;
     top: 0px;
     bottom: 0px;
+}
+
+#about .container { 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .about-item { 
@@ -216,12 +230,6 @@ section {
 
 
 /* job info */
-#job-info .grid-3 {
-    grid-template-areas: "col1 col2 col3"
-    "col1 col2 col3 ";
-    grid-auto-rows: auto;
-    row-gap: 50px;
-}
 
 #job-info .flex { 
     align-items: flex-start;
@@ -229,6 +237,11 @@ section {
 
 #job-info .card { 
     float: left;
+}
+
+#job-info ul {
+    margin-left: -20px;
+    list-style: '-   ';
 }
 
 /* clear fix */
@@ -245,13 +258,18 @@ section {
 /* BỐ CỤC PHẦN SỞ THÍCH */
 
 .hobby { 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 3px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    align-items: flex-start;
+    justify-content: space-between;
     list-style: none;
+    text-transform: uppercase;
 }
 
-.hobby li { 
+.hobby > div { 
+    width: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -260,11 +278,11 @@ section {
     text-align: center;
 }
 
-.hobby li i { 
+.hobby i { 
     font-size: 16px;
     border-radius: 50%;
-    border: 1px solid #4dabf7;
-    color: #4dabf7;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     width: 40px;
     height: 40px;
     display: flex;
@@ -300,7 +318,7 @@ section {
     content: " ";
     width: 1px;
     height: 100%;
-    background-color:  #d6c08d;
+    background-color:  var(--secondary-color);
     position: absolute;
     top: 0;
     left: -20px;
@@ -315,7 +333,7 @@ section {
     top: -20px;
     left: 0;
     display: block;
-    background-color: #d6c08d;
+    background-color: var(--secondary-color);
 }
 
 .cert-item:first-child::before { 
@@ -333,7 +351,8 @@ section {
 
 .cert-item ul { 
     list-style: "- ";
-    margin-left: 10px;
+    margin-left: -20px;
+    font-size: 13.5px;
 }
 
 /* Projects */
@@ -349,9 +368,8 @@ section {
 }
 
 #project .card > *,
-#project .card td { 
+#project .card tr { 
     border-bottom: var(--light-color) 1px solid;
-    border-top: var(--light-color) 1px solid;
     padding: 10px;
     font-size: 14px;
 }
@@ -366,20 +384,36 @@ section {
     font-size: 16px;
 }
 
+#project .card .card-title { 
+    margin-bottom: 0;
+}
+
 #project .card .categories { 
     display: flex;
     gap: 20px;
 }
 
+#project .card td { 
+    border-bottom: none;
+    padding: 10px 0;
+}
+
+#project .card tr:last-child { 
+    border-bottom: none;
+}
+
 #project .card .labels { 
-    width: 80px;
+    width: 95px;
     display: flex;
     align-content: flex-start;
+    border-bottom: none;
+    text-indent: 10px;
 }
 
 #project ul {
     list-style: '-  ';
-    margin-left: 10px;
+    margin-left: -20px;
+    margin-bottom: 0;
 }
 
 #project table { 
@@ -444,7 +478,7 @@ section {
     content: " ";
     width: 5px;
     height: 5px;
-    background-color: #4dabf7;
+    background-color: var(--primary-color);
     border-radius: 50%;
     position: absolute;
     top: 10px;
@@ -464,22 +498,23 @@ section {
 /* Points */
 .point {
     margin-top: -6px;
+    margin-bottom: 10px;
 }
 
 .point span {
     width: 45px;
     height: 2px;
-    background-color: #f7f7f7;
+    background-color: var(--light-color);
     display: inline-block;
     margin-right: 10px;
 }
 
 .inter span:nth-child(-n+2) {
-    background-color: #4dabf7;
+    background-color: var(--primary-color);
 }
 
 .fund span:first-child { 
-    background-color: #4dabf7;
+    background-color: var(--primary-color);
 }
 
 
@@ -518,6 +553,11 @@ footer .contact a i {
 
 /* Tables and under */
 @media(max-width: 868px) {
+    body { 
+        font-size: 12px;
+    }
+
+    /* Tùy chỉnh thanh heading */
     .heading img { 
         height: 120%;
         width: auto;
@@ -531,6 +571,7 @@ footer .contact a i {
         bottom: 5px;
     }
 
+    /* tùy chỉnh navbar */
     .navbar .avatar,
     .navbar .nav-info { 
         display: none;
@@ -550,9 +591,14 @@ footer .contact a i {
         order: -1;
     }
 
+    /* Tùy chỉnh phần about */
     section#about,
     section#about .container {
         padding: 0;
+    }
+
+    section#about .container { 
+        grid-template-columns: 1fr 1fr;
     }
 
     section#about::before { 
@@ -567,6 +613,7 @@ footer .contact a i {
         padding: 40px ;
     }
 
+    /* Tùy chỉnh phần certificate */
     .cert-item { 
         flex-direction: column;
         height: auto;
@@ -574,6 +621,10 @@ footer .contact a i {
 
     .cert-item--image {
         width: 100%;
+    }
+
+    #project .flex { 
+        justify-content: flex-start;
     }
     
 }
@@ -583,6 +634,7 @@ footer .contact a i {
 
 /* Mobile */
 @media(max-width: 500px) {
+    /* navbar */
     .navbar .flex { 
         flex-direction: column;
     }
@@ -610,10 +662,12 @@ footer .contact a i {
 
     }
 
+    /* about & information */
     section#about > .grid { 
         grid-template-columns: 1fr;
     }
 
+    /* certificate */
     .cert-items {
         grid-template-columns: 1fr;
     }
@@ -635,13 +689,23 @@ footer .contact a i {
         display: none;
     }
 
+    #project .flex { 
+        justify-content: center;
+    }
 
-    footer .flex a { 
+
+    /* footer */
+    /* hide the text */
+    footer .contact a { 
         margin: 0;
         padding: 25px 0;
     }
 
-    footer a span {
+    .contact a i {
+        font-size: 48px;
+    }
+
+    footer .contact a span {
         display: none;
     }
 }
